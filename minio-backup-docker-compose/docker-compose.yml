@@ -1,0 +1,31 @@
+# minio 2个单独实例，用于测试2种备份方法
+# 创建2个minio实例，容器名称minio1 minio2,网络名称minio-net,有一个新的网段，为2个容器分配ip,卷积挂载./data1:/data ./data2:/data
+version: '3'
+
+services:
+  minio1:
+    image: minio/minio
+    hostname: minio1
+    networks:
+      minio-net:
+        ipv4_address: 172.20.0.2
+    volumes:
+      - ./data1:/data
+    command: server /data
+
+  minio2:  
+    image: minio/minio
+    hostname: minio2
+    networks:
+      minio-net:
+        ipv4_address: 172.20.0.3
+    volumes:
+      - ./data2:/data
+    command: server /data
+      
+networks:
+  minio-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
