@@ -1,0 +1,30 @@
+# easyconnect 有代理纯命令行版本
+# 镜像使用 hagb/docker-easyconnect:cli
+# 端口映射 1082:1080 8888:8888
+# 容器名称 ec-bj
+# 卷映射 ./data-bj/root:/root ./data-bj/logs:/usr/share/sangfor/EasyConnect/resources/logs
+# 环境变量 EC_VER=7.6.3 CLI_OPTS='-d https://sslvpn.aisino.com -u user -p password'
+# 设备 /dev/net/tun
+# cap NET_ADMIN
+
+version: '3.7'
+services:
+  easyconnect-bj:
+    image: hagb/docker-easyconnect:cli
+    container_name: ec-bj
+    volumes:
+      - ./data-bj/root:/root
+      - ./data-bj/logs:/usr/share/sangfor/EasyConnect/resources/logs
+    ports:
+      - 1082:1080
+      - 8888:8888
+    environment:
+      - EC_VER=7.6.3
+      - CLI_OPTS='-d https://sslvpn.aisino.com -u user -p password'
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    stdin_open: true
+    tty: true
+
