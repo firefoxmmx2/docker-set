@@ -1,0 +1,3 @@
+[submodule "docker-elfk-docker-compose"]
+	path = docker-elfk-docker-compose
+	url = git@github.com:firefoxmmx2/docker-elfk-docker-compose.git
