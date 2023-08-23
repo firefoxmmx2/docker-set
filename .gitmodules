@@ -7,3 +7,6 @@
 [submodule "kafka-stack-docker-compose"]
 	path = kafka-stack-docker-compose
 	url = git@github.com:conduktor/kafka-stack-docker-compose.git
+[submodule "docker-keepalived-nginx"]
+	path = keepalived-nginx
+	url = git@github.com:firefoxmmx2/docker-keepalived-nginx.git
