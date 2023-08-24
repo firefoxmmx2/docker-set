@@ -1,0 +1,64 @@
+# 模拟大数据集群环境的部署脚本
+# @author hx
+# @since 2022-10-26
+#
+version: '3'
+
+services:
+  master:
+    image: bigdata-worker:0.3
+    container_name: bigdata
+    ports:
+      - 10800:10800
+      - 10801:10801
+      - 10802:10802
+      - 10803:10803
+      - 10804:10804
+      - 10000:10000
+      - 21810:21810
+      - 7071:7071
+    hostname: bigdata
+    extra_hosts:
+      bigdata: 172.19.0.2
+      bigdata1: 172.19.0.3
+      bigdata2: 172.19.0.4
+      metastore_host: 192.168.20.80
+    volumes:
+      - ./data1:/hdfs-root
+    networks:
+      bigdata:
+        ipv4_address: 172.19.0.2
+  slave1:
+    image: bigdata-worker:0.3
+    container_name: bigdata1
+    hostname: bigdata1
+    extra_hosts:
+      bigdata: 172.19.0.2
+      bigdata1: 172.19.0.3
+      bigdata2: 172.19.0.4
+      metastore_host: 192.168.20.80
+    volumes:
+      - ./data2:/hdfs-root
+    networks:
+      bigdata:
+        ipv4_address: 172.19.0.3
+  slave2:
+    image: bigdata-worker:0.3
+    container_name: bigdata2
+    hostname: bigdata2
+    extra_hosts:
+      bigdata: 172.19.0.2
+      bigdata1: 172.19.0.3
+      bigdata2: 172.19.0.4
+      metastore_host: 192.168.20.80
+    volumes:
+      - ./data3:/hdfs-root
+    networks:
+      bigdata:
+        ipv4_address: 172.19.0.4
+networks:
+  bigdata:
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16
+

@@ -1,0 +1,16 @@
+# 用于测试的jenkins部署文件
+# 端口映射 8099:8080 50099:50000
+# 卷映射 jenkins-home:/var/jenkins_home
+# 镜像使用 jenkins/jenkins:lts
+#
+version: "3"
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - "8099:8080"
+      - "50099:50000"
+    volumes:
+      - ./jenkins-home:/var/jenkins_home
+

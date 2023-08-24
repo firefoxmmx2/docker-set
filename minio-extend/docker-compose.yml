@@ -1,0 +1,34 @@
+# minio single node , single container
+version: "3.7"
+services:
+  minio1:
+    container_name: minio-extend1
+    image: minio/minio:latest
+    command: server /data1
+    ports:
+      - "9001:9000"
+    volumes:
+      - ./data1:/data1
+      # - ./data2:/data2
+      # - ./data3:/data3
+      # - ./data4:/data4
+    networks:
+      minio-network:
+        ipv4_address: 172.19.0.2
+  # minio2:
+    # container_name: minio-extend2
+    # image: minio/minio:latest
+    # command: server http://172.19.0.3:9000/data
+    # ports:
+      # - "9002:9000"
+    # networks:
+      # minio-network:
+        # ipv4_address: 172.19.0.3
+    # volumes:
+      # - ./data2:/data
+networks:
+  minio-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.0.0/16
