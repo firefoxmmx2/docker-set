@@ -1,0 +1,11 @@
+bigdata/data1
+bigdata/data2
+bigdata/data3
+bigdata/bigdata-worker:0.3
+easyconnect/data-bj/logs
+easyconnect/data-bj/root
+jenkins/jenkins-home
+minio-extend/data1
+minio-extend/data2
+minio-extend/data3
+minio-extend/data4
