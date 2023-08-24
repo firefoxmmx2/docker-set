@@ -10,3 +10,6 @@ minio-extend/data2
 minio-extend/data3
 minio-extend/data4
 easyconnect/data-jn
+kafka-stack-docker-compose-master/.github/workflows
+minio-backup-docker-compose/data1
+minio-backup-docker-compose/data2
