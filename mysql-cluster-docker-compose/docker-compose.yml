@@ -1,0 +1,92 @@
+# mysql mgr innodb cluster 
+version: '3'
+
+networks:
+  mysqlcluster:
+    ipam:
+      config:
+        - subnet: 172.19.0.0/24
+
+services:
+
+  mysql1:
+    image: mysql:8.0.21
+    command: >
+      --server-id=1
+      --log-bin=mysql-bin
+      --enforce-gtid-consistency=ON 
+      --gtid-mode=ON
+      --binlog-format=ROW 
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 33061:3306 
+    networks:
+      mysqlcluster:
+        ipv4_address: 172.19.0.2
+    extra_hosts:
+      - "mysql2:172.19.0.3"
+      - "mysql3:172.19.0.4"
+    volumes:
+      - ./mysql1:/var/lib/mysql
+
+  mysql2:
+    image: mysql:8.0.21 
+    command: >
+      --server-id=2
+      --log-bin=mysql-bin
+      --enforce-gtid-consistency=ON
+      --gtid-mode=ON 
+      --binlog-format=ROW
+    environment:
+      - MYSQL_ROOT_PASSWORD=root 
+    networks:
+      mysqlcluster:
+        ipv4_address: 172.19.0.3
+    extra_hosts:
+      - "mysql1:172.19.0.2"
+      - "mysql3:172.19.0.4"  
+    ports:
+      - 33062:3306
+    volumes:
+      - ./mysql2:/var/lib/mysql
+
+  mysql3:
+    image: mysql:8.0.21
+    command: >
+      --server-id=3
+      --log-bin=mysql-bin
+      --enforce-gtid-consistency=ON
+      --gtid-mode=ON
+      --binlog-format=ROW
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      mysqlcluster:
+        ipv4_address: 172.19.0.4
+    extra_hosts:
+      - "mysql1:172.19.0.2"
+      - "mysql2:172.19.0.3"
+    ports:
+      - 33063:3306
+    volumes:
+      - ./mysql3:/var/lib/mysql
+
+  mysql-shell:
+    image: akkojima/mysql-shell:8.0.21
+    command: ["sh", "-c", "while sleep 3600; do :; done"] 
+    environment: 
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - mysqlcluster
+    extra_hosts:
+      - "mysql1:172.19.0.2"
+      - "mysql2:172.19.0.3"
+      - "mysql3:172.19.0.4"
+    volumes:
+      - ./shell-scripts:/scripts
+    depends_on:
+      - mysql1
+      - mysql2
+      - mysql3
+
