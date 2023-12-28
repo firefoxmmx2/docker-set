@@ -1,0 +1,16 @@
+# elastalert2 docker 文件
+version: '3.1'
+services:
+  elastalert2:
+    image: jertel/elastalert2:latest
+    container_name: elastalert2
+    restart: always
+    volumes:
+      - ./config.yaml:/opt/elastalert/config.yaml
+      - ./rules:/opt/elastalert/rules
+      - ./config:/opt/elastalert/config
+    extra_hosts:
+      - scot:58.144.217.62
+    environment:
+      - CONTAINER_TIMEZONE=Asia/Shanghai
+      - TZ=Asia/Shanghai

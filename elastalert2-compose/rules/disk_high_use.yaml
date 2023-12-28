@@ -1,0 +1,37 @@
+name: "Disk high use"
+# rule
+type: metric_aggregation
+index: metricbeat-*
+use_strftime_index: true
+
+# Exemple query
+fields: ["@timestamp","agent.hostname","system.filesystem.mount_point"]
+
+query_timezone: Asia/Chongqing
+filter:
+- query:
+    query_string:
+      query: "system.filesystem.used.pct: (>0.8)"
+
+metric_agg_type: max
+metric_agg_key: system.filesystem.used.pct
+max_threshold: 0.8
+query_key: 
+  - system.filesystem.mount_point
+  - agent.hostname
+
+realert:
+  minutes: 10
+
+
+    #alert
+alert: post2
+jinja_root_name: _data
+http_post2_url: "http://work-police:9010/webhook/msg"
+http_post2_payload: |
+  {
+    "to":"运维测试群",
+    "content":"报警：在 {{ _data['@timestamp'] }} ,主机 {{ _data['agent.hostname'] }} 的挂载目录 {{ _data['system.filesystem.mount_point'] }} 的磁盘已经使用超过 50% (测试)",
+    "type":"text",
+    "isRoom":true
+  }
