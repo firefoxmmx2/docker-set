@@ -1,11 +1,11 @@
-name: "Disk high use"
+name: DiskUsageWithWechat
 # rule
 type: metric_aggregation
 index: metricbeat-*
 use_strftime_index: true
 
 # Exemple query
-fields: ["@timestamp","agent.hostname","system.filesystem.mount_point"]
+include: ["@timestamp","agent.hostname","system.filesystem.mount_point"]
 
 query_timezone: Asia/Chongqing
 filter:
