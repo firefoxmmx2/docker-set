@@ -1,0 +1,13 @@
+# 创建一个dannicool/docker-wechatbot-webhook的容器
+# 将它的端口映射到本地端口 9010
+# 用于发送给微信发送消息
+
+version: '3'
+services:
+  wechatbot:
+    image: 'dannicool/docker-wechatbot-webhook'
+    container_name: 'wechatbot'
+    ports:
+      - '9010:3001'
+    environment:
+      -  RECVD_MSG_API=http://work-police:9011
