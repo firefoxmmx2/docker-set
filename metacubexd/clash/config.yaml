@@ -1,7 +1,7 @@
-mixed-port: 7890
+mixed-port: 1080
 external-controller: '0.0.0.0:9090'
 log-level: info
-mode: Global
+mode: Rule
 dns:
   enabled: true
   nameserver:
@@ -153,3 +153,21 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
     path: ./ruleset/applications.yaml
     interval: 86400
+
+rules:
+  - RULE-SET,applications,DIRECT
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,reject,REJECT
+  - RULE-SET,icloud,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,google,Proxy
+  - RULE-SET,proxy,Proxy
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
+  - RULE-SET,telegramcidr,Proxy
+  # - GEOIP,LAN,DIRECT
+  # - GEOIP,CN,DIRECT
+  - MATCH,Proxy

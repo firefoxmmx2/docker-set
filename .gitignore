@@ -13,3 +13,8 @@ easyconnect/data-jn
 kafka-stack-docker-compose-master/.github/workflows
 minio-backup-docker-compose/data1
 minio-backup-docker-compose/data2
+anythingllm/storage
+metacubexd/clash/proxy-providers
+metacubexd/clash/ruleset
+metacubexd/clash/cache.db
+metacubexd/clash/geoip.metadb
