@@ -18,3 +18,17 @@ metacubexd/clash/proxy-providers
 metacubexd/clash/ruleset
 metacubexd/clash/cache.db
 metacubexd/clash/geoip.metadb
+easyconnect/data-bj
+easyconnect/data-wf
+elastalert2-compose/config
+elastalert2-compose/example_rules
+elastalert2-compose/rules
+elastalert2-compose/dir-watchdog.sh
+elastalert2-compose/elastalert-config.tar.gz
+elastalert2-compose/elastalert.img
+elastalert2-compose/send_message.sh
+mysql-cluster-docker-compose/mysql1
+mysql-cluster-docker-compose/mysql2
+mysql-cluster-docker-compose/mysql3
+reposilite/repository
+reposilite/maven-reposilite.img
