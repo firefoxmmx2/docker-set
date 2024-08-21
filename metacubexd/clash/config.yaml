@@ -25,6 +25,8 @@ proxy-groups:
     use:
       - ripaojiedian
       - v2rayshare
+      - ermaozi
+      - vxiaov
 proxy-providers:
   ripaojiedian:
     type: http
@@ -50,10 +52,34 @@ proxy-providers:
       timeout: 5000
       lazy: true
       expected-status: 204
-  aiboboxx:
+  # aiboboxx:
+    # type: http
+    # url: https://cdn.jsdelivr.net/gh/aiboboxx/clashfree/clash.yml
+    # path: ./proxy-providers/aiboboxx.yaml
+    # interval: 7200
+    # health-check:
+      # enable: true
+      # url: https://www.gstatic.com/generate_204
+      # interval: 300
+      # timeout: 5000
+      # lazy: true
+      # expected-status: 204
+  ermaozi:
     type: http
-    url: https://cdn.jsdelivr.net/gh/aiboboxx/clashfree/clash.yml
-    path: ./proxy-providers/aiboboxx.yaml
+    url: https://cdn.jsdelivr.net/gh/ermaozi/get_subscribe/subscribe/clash.yml
+    path: ./proxy-providers/ermaozi.yaml
+    interval: 7200
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+  vxiaov:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/vxiaov/free_proxies@main/clash/clash.provider.yaml
+    path: ./proxy-providers/vxiaov.yaml
     interval: 7200
     health-check:
       enable: true
