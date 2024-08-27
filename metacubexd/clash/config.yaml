@@ -27,6 +27,7 @@ proxy-groups:
       - v2rayshare
       - ermaozi
       - mfuu
+      - vxiaov 
       - nodeshare
 proxy-providers:
   ripaojiedian:
