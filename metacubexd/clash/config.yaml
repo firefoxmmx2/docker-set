@@ -20,13 +20,14 @@ proxy-groups:
       - auto
   - name: auto
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: https://hanime1.me
     interval: 300
     use:
       - ripaojiedian
       - v2rayshare
       - ermaozi
-      - vxiaov
+      - mfuu
+      - nodeshare
 proxy-providers:
   ripaojiedian:
     type: http
@@ -35,7 +36,7 @@ proxy-providers:
     interval: 7200
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: https://hanime1.me
       interval: 300
       timeout: 5000
       lazy: true
@@ -47,23 +48,11 @@ proxy-providers:
     interval: 7200
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: https://hanime1.me
       interval: 300
       timeout: 5000
       lazy: true
       expected-status: 204
-  # aiboboxx:
-    # type: http
-    # url: https://cdn.jsdelivr.net/gh/aiboboxx/clashfree/clash.yml
-    # path: ./proxy-providers/aiboboxx.yaml
-    # interval: 7200
-    # health-check:
-      # enable: true
-      # url: https://www.gstatic.com/generate_204
-      # interval: 300
-      # timeout: 5000
-      # lazy: true
-      # expected-status: 204
   ermaozi:
     type: http
     url: https://cdn.jsdelivr.net/gh/ermaozi/get_subscribe/subscribe/clash.yml
@@ -71,7 +60,7 @@ proxy-providers:
     interval: 7200
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: https://hanime1.me
       interval: 300
       timeout: 5000
       lazy: true
@@ -83,11 +72,21 @@ proxy-providers:
     interval: 7200
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: https://hanime1.me
       interval: 300
       timeout: 5000
       lazy: true
       expected-status: 204
+  mfuu:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/mfuu/v2ray/clash.yaml
+    path: ./proxy-providers/mfuu.yaml
+    interval: 7200
+  nodeshare:
+    type: http
+    url: https://tglaoshiji.github.io/nodeshare/2024/7/20240826.yaml
+    path: ./proxy-providers/nodeshare.yaml
+    interval: 7200
 rule-providers:
   reject:
     type: http
