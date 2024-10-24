@@ -32,3 +32,7 @@ mysql-cluster-docker-compose/mysql2
 mysql-cluster-docker-compose/mysql3
 reposilite/repository
 reposilite/maven-reposilite.img
+easyconnect/data-yt/.vnc
+easyconnect/data-yt/conf
+easyconnect/data-yt/.Xauthority
+easyconnect/data-yt/vpn603.p12
