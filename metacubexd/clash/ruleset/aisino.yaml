@@ -1,0 +1,5 @@
+# rule for aisino
+payload:
+  - '*.aisino.cs'
+  - '*.aisino.as'
+  - ehr.aisino.com

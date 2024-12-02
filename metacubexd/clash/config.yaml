@@ -13,6 +13,10 @@ dns:
     - tls://1.0.0.1:853
     - tls://dns.google:853
 proxies:
+  # 航信代理
+  - { name: aisinoProxy, type: http, server: 127.0.0.1, port: 8888 }
+  # 航信潍坊代理
+  - { name: weifangProxy, type: http, server: 127.0.0.1, port: 8890 }
 proxy-groups:
   - name: Proxy
     type: select
@@ -180,10 +184,29 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 
+  ffmmx-proxy:
+    type: file
+    behavior: domain
+    path: ./ruleset/ffmmx-proxy.yaml
+    interval: 30
+
+  ffmmx-dirtect:
+    type: file
+    behavior: domain
+    path: ./ruleset/ffmmx-dirtect.yaml
+    interval: 30
+
+  aisino:
+    type: file
+    behavior: domain
+    path: ./ruleset/aisino.yaml
+    interval: 30
 rules:
   - RULE-SET,applications,DIRECT
+  - RULE-SET,ffmmx-dirtect,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,aisino,aisinoProxy
   - RULE-SET,private,DIRECT
   - RULE-SET,reject,REJECT
   - RULE-SET,icloud,DIRECT
@@ -194,6 +217,7 @@ rules:
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
   - RULE-SET,telegramcidr,Proxy
+  - RULE-SET,ffmmx-proxy,Proxy
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,Proxy
