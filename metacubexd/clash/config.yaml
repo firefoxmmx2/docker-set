@@ -213,6 +213,7 @@ rules:
   - RULE-SET,apple,DIRECT
   - RULE-SET,google,Proxy
   - RULE-SET,proxy,Proxy
+  - RULE-SET,gfw,Proxy
   - RULE-SET,direct,DIRECT
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
@@ -220,4 +221,4 @@ rules:
   - RULE-SET,ffmmx-proxy,Proxy
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,Proxy
+  - MATCH,DIRECT

@@ -1,3 +1,4 @@
 # direct rule for ffmmx
 
 payload:
+  - '*.firefox.com'
