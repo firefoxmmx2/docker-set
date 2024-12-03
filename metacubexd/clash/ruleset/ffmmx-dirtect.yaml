@@ -2,3 +2,4 @@
 
 payload:
   - '*.firefox.com'
+  - '*.mozilla.com'
