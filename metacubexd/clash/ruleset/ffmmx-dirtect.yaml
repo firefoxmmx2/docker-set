@@ -6,3 +6,4 @@ payload:
   - '*.mozilla.*'
   - '*.*.mozilla.*'
   - '*.*.*.mozilla.*'
+  - '*.jsdelivr.net'

@@ -2,4 +2,5 @@
 
 payload:
   - '*.docker.io'
+  - 'v0.dev'
 
