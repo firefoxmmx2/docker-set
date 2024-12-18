@@ -188,19 +188,19 @@ rule-providers:
     type: file
     behavior: domain
     path: ./ruleset/ffmmx-proxy.yaml
-    interval: 30
+    interval: 5
 
   ffmmx-dirtect:
     type: file
     behavior: domain
     path: ./ruleset/ffmmx-dirtect.yaml
-    interval: 30
+    interval: 5
 
   aisino:
     type: file
     behavior: domain
     path: ./ruleset/aisino.yaml
-    interval: 30
+    interval: 5
 rules:
   - RULE-SET,applications,DIRECT
   - RULE-SET,ffmmx-dirtect,DIRECT
@@ -221,4 +221,4 @@ rules:
   - RULE-SET,ffmmx-proxy,Proxy
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,DIRECT
+  - MATCH,Proxy
