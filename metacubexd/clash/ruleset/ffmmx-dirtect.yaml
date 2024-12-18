@@ -6,3 +6,6 @@ payload:
   - '*.mozilla.*'
   - '*.*.mozilla.*'
   - '*.*.*.mozilla.*'
+  - 'cdn.jsdelivr.net'
+  - '*.jetbrains.com'
+  - 'downloads.marketplace.jetbrains.com'
