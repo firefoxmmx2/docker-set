@@ -35,3 +35,6 @@ easyconnect/data-yt/.vnc
 easyconnect/data-yt/conf
 easyconnect/data-yt/.Xauthority
 easyconnect/data-yt/vpn603.p12
+metacubexd/clash/ruleset/direct.yaml
+metacubexd/clash/ruleset/proxy.yaml
+metacubexd/clash/ruleset/reject.yaml
