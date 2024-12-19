@@ -1,4 +1,4 @@
-mixed-port: 1081
+mixed-port: 1080
 external-controller: '0.0.0.0:9090'
 log-level: info
 mode: Rule
