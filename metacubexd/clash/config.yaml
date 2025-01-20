@@ -1,4 +1,4 @@
-mixed-port: 1081
+mixed-port: 1080
 external-controller: '0.0.0.0:9090'
 log-level: info
 mode: Rule
@@ -24,7 +24,8 @@ proxy-groups:
       - auto
   - name: auto
     type: url-test
-    url: https://hanime1.me
+    url: https://www.gstatic.com/generate_204
+    timeout: 5000
     interval: 300
     use:
       - ripaojiedian
@@ -41,7 +42,7 @@ proxy-providers:
     interval: 7200
     health-check:
       enable: true
-      url: https://hanime1.me
+      url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 5000
       lazy: true
@@ -53,7 +54,7 @@ proxy-providers:
     interval: 7200
     health-check:
       enable: true
-      url: https://hanime1.me
+      url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 5000
       lazy: true
@@ -65,7 +66,7 @@ proxy-providers:
     interval: 7200
     health-check:
       enable: true
-      url: https://hanime1.me
+      url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 5000
       lazy: true
@@ -77,7 +78,7 @@ proxy-providers:
     interval: 7200
     health-check:
       enable: true
-      url: https://hanime1.me
+      url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 5000
       lazy: true
@@ -89,7 +90,7 @@ proxy-providers:
     interval: 7200
   nodeshare:
     type: http
-    url: https://tglaoshiji.github.io/nodeshare/2024/7/20240826.yaml
+    url: https://a.nodeshare.xyz/uploads/2025/1/20250119.yaml
     path: ./proxy-providers/nodeshare.yaml
     interval: 7200
 rule-providers:
@@ -188,19 +189,19 @@ rule-providers:
     type: file
     behavior: domain
     path: ./ruleset/ffmmx-proxy.yaml
-    interval: 5
+    interval: 8
 
   ffmmx-dirtect:
     type: file
     behavior: domain
     path: ./ruleset/ffmmx-dirtect.yaml
-    interval: 5
+    interval: 8
 
   aisino:
     type: file
     behavior: domain
     path: ./ruleset/aisino.yaml
-    interval: 5
+    interval: 9
 rules:
   - RULE-SET,applications,DIRECT
   - RULE-SET,ffmmx-dirtect,DIRECT
