@@ -38,3 +38,13 @@ easyconnect/data-yt/vpn603.p12
 metacubexd/clash/ruleset/direct.yaml
 metacubexd/clash/ruleset/proxy.yaml
 metacubexd/clash/ruleset/reject.yaml
+metacubexd/clash/ruleset/apple.yaml
+metacubexd/clash/ruleset/gfw.yaml
+metacubexd/clash/ruleset/cncidr.yaml
+metacubexd/clash/ruleset/applications.yaml
+metacubexd/clash/ruleset/google.yaml
+metacubexd/clash/ruleset/icloud.yaml
+metacubexd/clash/ruleset/lancidr.yaml
+metacubexd/clash/ruleset/telegramcidr.yaml
+metacubexd/clash/ruleset/tld-not-cn.yaml
+metacubexd/clash/ruleset/private.yaml
