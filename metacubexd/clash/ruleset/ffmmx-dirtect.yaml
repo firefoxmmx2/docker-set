@@ -9,3 +9,6 @@ payload:
   - 'cdn.jsdelivr.net'
   - '*.jetbrains.com'
   - 'downloads.marketplace.jetbrains.com'
+  - '*.hlwn14.com'
+  - '*.openrouter.ai'
+  - 'openrouter.ai'
