@@ -1,6 +1,6 @@
 services:
   anythingllm:
-    image: mintplexlabs/anythingllm
+    image: mintplexlabs/anythingllm:latest
     container_name: anythingllm
     ports:
     - "3001:3001"
