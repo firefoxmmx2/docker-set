@@ -14,7 +14,7 @@ services:
       - JWT_SECRET="4fA3b5E8cD9jK2lMpQ0rS"
       - LLM_PROVIDER=ollama
       - "OLLAMA_BASE_PATH=http://host.docker.internal:11434"
-      - OLLAMA_MODEL_PREF=deepseek-r1:7b
+      - OLLAMA_MODEL_PREF="deepseek-r1:7b"
       - OLLAMA_MODEL_TOKEN_LIMIT=4096
       - EMBEDDING_ENGINE=ollama
       - "EMBEDDING_BASE_PATH=http://host.docker.internal:11434"
