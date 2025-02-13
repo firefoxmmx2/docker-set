@@ -27,12 +27,15 @@ realert:
 
 
     #alert
-alert: slack
-slack_username: "ElastAlert"
-slack_icon_emoji: ":warning:"
-slack_text: |
-  报警通知：
-  *时间*: {{ _data['@timestamp'] }}
-  *主机*: {{ _data['agent.hostname'] }}
-  *挂载点*: {{ _data['system.filesystem.mount_point'] }}
-  *状态*: 磁盘使用超过阈值！
+alert: post2
+jinja_root_name: match
+http_post2_url: "https://oapi.dingtalk.com/robot/send?access_token="
+http_post2_headers:
+  Content-Type: "application/json"
+http_post2_payload: |
+  {
+    "msgtype": "text",
+    "text": {
+      "content": "目录监控告警：\n时间: {{ match['@timestamp'] | ts_to_dt | dt_to_str('%Y-%m-%d %H:%M:%S') }}\n主机: {{ match.agent.hostname }}\n路径: /data/dtt-pack/unzip\n状态: 检测到超过30分钟未处理的压包文件！当前积压数量：{{ match.directory.files_number }}"
+    }
+  }
