@@ -125,3 +125,5 @@ alert_time_limit:
 #        - console
 #        - file
 #      propagate: false
+
+slack_webhook_url: "https://hooks.slack.com/services/XXXXX/XXXXX/XXXXX"  # 替换为实际Slack webhook地址
