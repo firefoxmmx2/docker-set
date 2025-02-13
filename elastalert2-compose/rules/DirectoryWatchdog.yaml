@@ -1,0 +1,38 @@
+name: DirectoryWatchDog
+# rule
+type: metric_aggregation
+index: filebeat-*
+use_strftime_index: true
+
+query_timezone: Asia/Chongqing
+filter:
+- query:
+    bool:
+      must:
+        - term:
+            event.dataset: directory
+        - range:
+            directory.files_number:
+              gte: 1
+
+metric_agg_type: max
+metric_agg_key: directory.files_number
+max_threshold: 1
+query_key: 
+  - directory.path
+  - agent.hostname
+
+realert:
+  minutes: 15
+
+
+    #alert
+alert: slack
+slack_username: "ElastAlert"
+slack_icon_emoji: ":warning:"
+slack_text: |
+  报警通知：
+  *时间*: {{ _data['@timestamp'] }}
+  *主机*: {{ _data['agent.hostname'] }}
+  *挂载点*: {{ _data['system.filesystem.mount_point'] }}
+  *状态*: 磁盘使用超过阈值！

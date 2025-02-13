@@ -25,13 +25,12 @@ realert:
 
 
     #alert
-alert: post2
-jinja_root_name: _data
-http_post2_url: "http://work-police:9010/webhook/msg"
-http_post2_payload: |
-  {
-    "to":"运维测试群",
-    "content":"报警：在 {{ _data['@timestamp'] }} ,主机 {{ _data['agent.hostname'] }} 的挂载目录 {{ _data['system.filesystem.mount_point'] }} 的磁盘已经使用超过 50% (测试)",
-    "type":"text",
-    "isRoom":true
-  }
+alert: slack
+slack_username: "ElastAlert-DiskMonitor"
+slack_icon_emoji: ":hard_drive:"
+slack_text: |
+  :exclamation: 磁盘使用告警：
+  *检测时间*: {{ _data['@timestamp'] }}
+  *主机名称*: `{{ _data['agent.hostname'] }}`
+  *挂载目录*: `{{ _data['system.filesystem.mount_point'] }}`
+  *使用比例*: {{ "%.2f"|format(_data['system.filesystem.used.pct']*100) }}%

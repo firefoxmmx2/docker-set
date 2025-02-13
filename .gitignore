@@ -21,7 +21,6 @@ easyconnect/data-bj
 easyconnect/data-wf
 elastalert2-compose/config
 elastalert2-compose/example_rules
-elastalert2-compose/rules
 elastalert2-compose/dir-watchdog.sh
 elastalert2-compose/elastalert-config.tar.gz
 elastalert2-compose/elastalert.img
