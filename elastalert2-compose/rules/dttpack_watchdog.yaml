@@ -1,0 +1,44 @@
+name: DttPackWatchogWechat
+# rule
+type: frequency
+index: test-redis-watchdog
+
+query_timezone: Asia/Shanghai
+filter:
+- query:
+    bool:
+      must:
+        - script:
+            script: doc['existsIndexes'].value > doc['unpackIndex'].value
+
+#query_key: 
+#  - agent.hostname
+
+timeframe:
+  minutes: 15
+num_events: 1
+
+realert:
+ minutes: 15
+
+
+    #alert
+# alert: post2
+# jinja_root_name: _data
+# http_post2_url: "http://db3:9010/webhook/msg"
+# http_post2_payload: |
+  # {
+    # "to":"行业场所系统运维研发沟通",
+    # "content":"报警：在 {{ _data['@timestamp'] }} ,主机api3上/data/dtt-pack/unzip，可能发生了压包。",
+    # "type":"text",
+    # "isRoom":true
+  # }
+alert: slack
+slack_username: "ElastAlert"
+slack_icon_emoji: ":package:"
+slack_text: |
+  压包异常报警：
+  *时间*: {@timestamp}
+  *主机*: {match[agent.hostname]}
+  *路径*: /data/dtt-pack/unzip
+  *状态*: 检测到未解压的压包文件！
