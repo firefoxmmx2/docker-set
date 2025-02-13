@@ -33,12 +33,15 @@ realert:
     # "type":"text",
     # "isRoom":true
   # }
-alert: slack
-slack_username: "ElastAlert"
-slack_icon_emoji: ":package:"
-slack_text: |
-  压包异常报警：
-  *时间*: {@timestamp}
-  *主机*: {match[agent.hostname]}
-  *路径*: /data/dtt-pack/unzip
-  *状态*: 检测到未解压的压包文件！
+alert: post2
+jinja_root_name: match
+http_post2_url: "https://oapi.dingtalk.com/robot/send?access_token="
+http_post2_headers:
+  Content-Type: "application/json"
+http_post2_payload: |
+  {
+    "msgtype": "text",
+    "text": {
+      "content": "压包文件积压告警：\n检测时间: {{ match['@timestamp'] | ts_to_dt | dt_to_str('%Y-%m-%d %H:%M:%S') }}\n主机名称: {{ match.agent.hostname }}\n积压数量: {{ match.directory.files_number }}\n超时阈值: 30分钟"
+    }
+  }
