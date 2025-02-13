@@ -25,12 +25,15 @@ realert:
 
 
     #alert
-alert: slack
-slack_username: "ElastAlert-DiskMonitor"
-slack_icon_emoji: ":hard_drive:"
-slack_text: |
-  :exclamation: 磁盘使用告警：
-  *检测时间*: {{ _data['@timestamp'] }}
-  *主机名称*: `{{ _data['agent.hostname'] }}`
-  *挂载目录*: `{{ _data['system.filesystem.mount_point'] }}`
-  *使用比例*: {{ "%.2f"|format(_data['system.filesystem.used.pct']*100) }}%
+alert: post2
+jinja_root_name: match
+http_post2_url: "https://oapi.dingtalk.com/robot/send?access_token="
+http_post2_headers:
+  Content-Type: "application/json"
+http_post2_payload: |
+  {
+    "msgtype": "text",
+    "text": {
+      "content": "磁盘使用告警：\n时间: {{ match['@timestamp'] | ts_to_dt | dt_to_str('%Y-%m-%d %H:%M:%S') }}\n主机: {{ match.agent.hostname }}\n挂载点: {{ match.system.filesystem.mount_point }}\n使用率: {{ (match.system.filesystem.used.pct * 100) | round(2) }}%\n当前状态: 已超过80%使用率阈值"
+    }
+  }
