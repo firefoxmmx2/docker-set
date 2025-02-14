@@ -12,3 +12,5 @@ payload:
   - '*.hlwn14.com'
   - '*.openrouter.ai'
   - 'openrouter.ai'
+  - 'qwenlm.ai'
+  - '*.qwenlm.ai'
