@@ -34,7 +34,39 @@ proxy-groups:
       - mfuu
       - vxiaov 
       - nodeshare
+      - getNode
+      - clashmeta
+      - wenode
+      - ndnode
+      - nodefree
+      - nodev2ray
+      - yudou66
 proxy-providers:
+  wenode:
+    type: http
+    url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/wenode.yaml
+    path: ./proxy-providers/wenode.yaml
+    interval: 7200
+  ndnode:
+    type: http
+    url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/ndnode.yaml
+    path: ./proxy-providers/ndnode.yaml
+    interval: 7200
+  nodefree:
+    type: http
+    url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodefree.yaml
+    path: ./proxy-providers/ndnode.yaml
+    interval: 7200
+  nodev2ray:
+    type: http
+    url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodev2ray.yaml
+    path: ./proxy-providers/nodev2ray.yaml
+    interval: 7200
+  yudou66:
+    type: http
+    url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.yaml
+    path: ./proxy-providers/yudou66.yaml
+    interval: 7200
   ripaojiedian:
     type: http
     url: https://cdn.jsdelivr.net/gh/ripaojiedian/freenode/clash
@@ -52,37 +84,16 @@ proxy-providers:
     url: https://cdn.jsdelivr.net/gh/firefoxmmx2/v2rayshare_subcription/subscription/clash_sub.yaml
     path: ./proxy-providers/v2rayshare.yaml
     interval: 7200
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
   ermaozi:
     type: http
     url: https://cdn.jsdelivr.net/gh/ermaozi/get_subscribe/subscribe/clash.yml
     path: ./proxy-providers/ermaozi.yaml
     interval: 7200
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
   vxiaov:
     type: http
     url: https://cdn.jsdelivr.net/gh/vxiaov/free_proxies@main/clash/clash.provider.yaml
     path: ./proxy-providers/vxiaov.yaml
     interval: 7200
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
   mfuu:
     type: http
     url: https://cdn.jsdelivr.net/gh/mfuu/v2ray/clash.yaml
@@ -93,6 +104,17 @@ proxy-providers:
     url: https://a.nodeshare.xyz/uploads/2025/1/20250119.yaml
     path: ./proxy-providers/nodeshare.yaml
     interval: 7200
+  getNode:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/a2470982985/getNode@main/clash.yaml
+    path: ./proxy-providers/getNode.yaml
+    interval: 7200
+  clashmeta:
+    type: http
+    url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/clashmeta.yaml
+    path: ./proxy-providers/clashmeta.yaml
+    interval: 7200
+
 rule-providers:
   reject:
     type: http
@@ -222,4 +244,4 @@ rules:
   - RULE-SET,ffmmx-proxy,Proxy
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,Proxy
+  - MATCH,DIRECT
