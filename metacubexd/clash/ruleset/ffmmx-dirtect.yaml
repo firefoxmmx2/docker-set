@@ -12,4 +12,7 @@ payload:
   - '*.hlwn14.com'
   - '*.openrouter.ai'
   - 'openrouter.ai'
+  - 'qwenlm.ai'
+  - '*.qwenlm.ai'
+  - '21st.dev'
   - 'element-plus.org'
