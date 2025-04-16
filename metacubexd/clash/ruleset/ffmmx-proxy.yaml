@@ -3,4 +3,9 @@
 payload:
   - '*.docker.io'
   - 'v0.dev'
+  - '*.codeiumdata.com'
+  - '*.codeium.com'
+  - '*.windsurf.*'
+  - 'codeium.com'
+  - 'windsurf.*'
 
