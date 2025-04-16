@@ -47,3 +47,5 @@ metacubexd/clash/ruleset/lancidr.yaml
 metacubexd/clash/ruleset/telegramcidr.yaml
 metacubexd/clash/ruleset/tld-not-cn.yaml
 metacubexd/clash/ruleset/private.yaml
+maxkb/maxkb
+maxkb/python-packages
