@@ -7,7 +7,7 @@ payload:
   - '*.*.mozilla.*'
   - '*.*.*.mozilla.*'
   - 'cdn.jsdelivr.net'
-  - '*.jetbrains.com'
+  # - '*.jetbrains.com'
   - 'downloads.marketplace.jetbrains.com'
   - '*.hlwn14.com'
   - '*.openrouter.ai'
@@ -18,3 +18,4 @@ payload:
   - 'element-plus.org'
   - '*.element-plus.org'
   - '*.archlinux.org'
+  - 'playwright.download.prss.microsoft.com'
