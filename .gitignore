@@ -47,6 +47,7 @@ metacubexd/clash/ruleset/lancidr.yaml
 metacubexd/clash/ruleset/telegramcidr.yaml
 metacubexd/clash/ruleset/tld-not-cn.yaml
 metacubexd/clash/ruleset/private.yaml
+metacubexd/clash/metacubexd-gh-pages
 maxkb/maxkb
 maxkb/python-packages
 rustdesk-server/data/db_v2.sqlite3
