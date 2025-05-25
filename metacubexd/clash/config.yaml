@@ -2,6 +2,10 @@ mixed-port: 1080
 external-controller: '0.0.0.0:9090'
 log-level: info
 mode: Rule
+allow-lan: true
+profile:
+  store-selected: true
+  store-fake-ip: true
 dns:
   enabled: true
   nameserver:
@@ -261,4 +265,4 @@ rules:
   - RULE-SET,ffmmx-proxy,Proxy
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,DIRECT
+  - MATCH,Proxy
