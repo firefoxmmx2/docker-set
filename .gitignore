@@ -56,3 +56,4 @@ rustdesk-server/data/db_v2.sqlite3-wal
 rustdesk-server/data/id_ed25519
 rustdesk-server/data/id_ed25519.pub
 dataease*
+n8n/data
