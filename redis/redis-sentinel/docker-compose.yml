@@ -1,0 +1,113 @@
+services:
+  redis-master:
+    image: redis:7.2-alpine
+    container_name: redis-master
+    restart: unless-stopped
+    command: ["/usr/local/bin/redis-entrypoint.sh", "/usr/local/etc/redis/redis.conf"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+    ports:
+      - "6390:6379"
+    volumes:
+      - ./redis-entrypoint.sh:/usr/local/bin/redis-entrypoint.sh:ro
+      - ./conf/master/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-master-data:/data
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    networks:
+      - redisnet
+
+  redis-replica:
+    image: redis:7.2-alpine
+    container_name: redis-replica
+    restart: unless-stopped
+    command: ["/usr/local/bin/redis-entrypoint.sh", "/usr/local/etc/redis/redis.conf"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 1s
+      timeout: 3s
+      retries: 30    
+    ports:
+      - "6391:6379"
+    volumes:
+      - ./redis-entrypoint.sh:/usr/local/bin/redis-entrypoint.sh:ro
+      - ./conf/replica/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-replica-data:/data
+    depends_on:
+      - redis-master
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    networks:
+      - redisnet
+
+  sentinel1:
+    image: redis:7.2-alpine
+    container_name: redis-sentinel1
+    restart: unless-stopped
+    volumes:
+      - ./conf/sentinel/sentinel.conf:/usr/local/etc/redis/sentinel.conf:ro
+      - ./sentinel-entrypoint.sh:/usr/local/bin/sentinel-entrypoint.sh
+    entrypoint: ["/usr/local/bin/sentinel-entrypoint.sh"]
+    ports:
+      - "26379:26379"
+    depends_on:
+      - redis-master
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    networks:
+      - redisnet
+
+  sentinel2:
+    image: redis:7.2-alpine
+    container_name: redis-sentinel2
+    restart: unless-stopped
+    volumes:
+      - ./conf/sentinel/sentinel.conf:/usr/local/etc/redis/sentinel.conf:ro
+      - ./sentinel-entrypoint.sh:/usr/local/bin/sentinel-entrypoint.sh
+    entrypoint: ["/usr/local/bin/sentinel-entrypoint.sh"]
+    ports:
+      - "26380:26379"
+    depends_on:
+      - redis-master
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    networks:
+      - redisnet
+
+  sentinel3:
+    image: redis:7.2-alpine
+    container_name: redis-sentinel3
+    restart: unless-stopped
+    volumes:
+      - ./conf/sentinel/sentinel.conf:/usr/local/etc/redis/sentinel.conf:ro
+      - ./sentinel-entrypoint.sh:/usr/local/bin/sentinel-entrypoint.sh
+    entrypoint: ["/usr/local/bin/sentinel-entrypoint.sh"]
+    ports:
+      - "26381:26379"
+    depends_on:
+      - redis-master
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    networks:
+      - redisnet
+
+networks:
+  redisnet:
+    driver: bridge
+
+volumes:
+  redis-master-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./redis-master-data
+  redis-replica-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./redis-replica-data
