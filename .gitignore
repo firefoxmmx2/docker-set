@@ -59,3 +59,13 @@ dataease*
 n8n/data
 redis/redis-sentinel/redis-master-data/dump.rdb
 redis/redis-sentinel/redis-replica-data/dump.rdb
+redis/redis-cluster/redis-node1-data/dump.rdb
+redis/redis-cluster/redis-node1-data/nodes.conf
+redis/redis-cluster/redis-node3-data/dump.rdb
+redis/redis-cluster/redis-node3-data/nodes.conf
+redis/redis-cluster/redis-node2-data/dump.rdb
+redis/redis-cluster/redis-node2-data/nodes.conf
+redis/redis-cluster/redis-node4-data/dump.rdb
+redis/redis-cluster/redis-node4-data/nodes.conf
+redis/redis-cluster/redis-node5-data/nodes.conf
+redis/redis-cluster/redis-node5-data/dump.rdb
