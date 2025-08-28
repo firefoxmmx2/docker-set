@@ -59,7 +59,6 @@ proxy-groups:
       - nodefree
       - nodev2ray
       - yudou66
-      - anaer
 proxy-providers:
   wenode:
     type: http
