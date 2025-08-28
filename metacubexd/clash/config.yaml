@@ -33,9 +33,7 @@ proxy-groups:
       - ripaojiedian
       - v2rayshare
       - ermaozi
-      - mfuu
       - vxiaov 
-      - nodeshare 
       - getNode
       - clashmeta
       - wenode
@@ -43,6 +41,7 @@ proxy-groups:
       - nodefree
       - nodev2ray
       - yudou66
+      - anaer
   - name: auto
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -52,9 +51,7 @@ proxy-groups:
       - ripaojiedian
       - v2rayshare
       - ermaozi
-      - mfuu
       - vxiaov 
-      - nodeshare
       - getNode
       - clashmeta
       - wenode
@@ -62,6 +59,7 @@ proxy-groups:
       - nodefree
       - nodev2ray
       - yudou66
+      - anaer
 proxy-providers:
   wenode:
     type: http
@@ -115,16 +113,6 @@ proxy-providers:
     url: https://cdn.jsdelivr.net/gh/vxiaov/free_proxies@main/clash/clash.provider.yaml
     path: ./proxy-providers/vxiaov.yaml
     interval: 7200
-  mfuu:
-    type: http
-    url: https://cdn.jsdelivr.net/gh/mfuu/v2ray/clash.yaml
-    path: ./proxy-providers/mfuu.yaml
-    interval: 7200
-  nodeshare:
-    type: http
-    url: https://a.nodeshare.xyz/uploads/2025/1/20250119.yaml
-    path: ./proxy-providers/nodeshare.yaml
-    interval: 7200
   getNode:
     type: http
     url: https://cdn.jsdelivr.net/gh/a2470982985/getNode@main/clash.yaml
@@ -134,6 +122,11 @@ proxy-providers:
     type: http
     url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/clashmeta.yaml
     path: ./proxy-providers/clashmeta.yaml
+    interval: 7200
+  anaer:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/anaer/Sub@main/clash.yaml
+    path: ./proxy-providers/anaer.yaml
     interval: 7200
 
 rule-providers:
