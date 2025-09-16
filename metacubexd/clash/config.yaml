@@ -49,7 +49,7 @@ proxy-groups:
       - ermaozi
       - vxiaov 
       - getNode
-      - clashmeta
+      # - clashmeta
       - wenode
       - ndnode
       - nodefree
@@ -235,8 +235,9 @@ rule-providers:
     path: ./ruleset/aisino.yaml
     interval: 9
 rules:
-  - RULE-SET,applications,DIRECT
   - RULE-SET,ffmmx-dirtect,DIRECT
+  - RULE-SET,ffmmx-proxy,Proxy
+  - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
   - RULE-SET,aisino,aisinoProxy
@@ -251,7 +252,6 @@ rules:
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
   - RULE-SET,telegramcidr,Proxy
-  - RULE-SET,ffmmx-proxy,Proxy
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,DIRECT
