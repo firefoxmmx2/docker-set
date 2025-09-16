@@ -265,4 +265,4 @@ rules:
   - RULE-SET,ffmmx-proxy,Proxy
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,Proxy
+  - MATCH,DIRECT

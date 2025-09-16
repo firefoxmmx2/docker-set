@@ -19,3 +19,4 @@ payload:
   - '*.element-plus.org'
   # - '*.archlinux.org'
   - 'playwright.download.prss.microsoft.com'
+  - 'dm84.tv'
