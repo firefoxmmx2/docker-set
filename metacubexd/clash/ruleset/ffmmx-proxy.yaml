@@ -25,6 +25,8 @@ payload:
   - 'kkickass.com'
   - 'makepad.nl'
   # - 'artifacts.elastic.co'
+  - '*.jetbrains.com'
+  - 'artifacts.elastic.co'
   # - 'windsurf.com'
   # - '*.windsurf.com'
   # - '*.codeium.com'
