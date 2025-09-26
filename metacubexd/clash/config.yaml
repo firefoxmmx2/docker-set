@@ -7,10 +7,8 @@ profile:
   store-selected: true
   store-fake-ip: true
 dns:
-  enabled: true
-  listen: 0.0.0.0:53
-  use-hosts: true
-  use-system-hosts: true
+  enable: true
+  listen: 0.0.0.0:1053
   direct-nameserver:
     - system
   direct-nameserver-follow-policy: false
@@ -25,7 +23,6 @@ dns:
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
     - '*.lan'
-    - localhost
     - '*.local'
   fallback:
     - tls://8.8.4.4
