@@ -69,3 +69,4 @@ redis/redis-cluster/redis-node4-data/dump.rdb
 redis/redis-cluster/redis-node4-data/nodes.conf
 redis/redis-cluster/redis-node5-data/nodes.conf
 redis/redis-cluster/redis-node5-data/dump.rdb
+metacubexd/clash/ui
