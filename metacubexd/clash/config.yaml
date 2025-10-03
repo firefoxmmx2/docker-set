@@ -5,8 +5,6 @@ mode: Rule
 dns:
   enable: true
   listen: 0.0.0.0:1053
-  direct-nameserver:
-    - system
   direct-nameserver-follow-policy: false
   default-nameserver:
     - 119.29.29.29
