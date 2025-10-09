@@ -230,22 +230,25 @@ rule-providers:
     interval: 86400
 
   ffmmx-proxy:
-    type: file
+    type: http
     behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/firefoxmmx2/docker-set@hasee/metacubexd/clash/ruleset/ffmmx-proxy.yaml"
     path: ./ruleset/ffmmx-proxy.yaml
-    interval: 8
+    interval: 10
 
   ffmmx-dirtect:
-    type: file
+    type: http
     behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/firefoxmmx2/docker-set@hasee/metacubexd/clash/ruleset/ffmmx-dirtect.yaml"
     path: ./ruleset/ffmmx-dirtect.yaml
-    interval: 8
+    interval: 10
 
   aisino:
-    type: file
+    type: http
     behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/firefoxmmx2/docker-set@hasee/metacubexd/clash/ruleset/aisino.yaml"
     path: ./ruleset/aisino.yaml
-    interval: 9
+    interval: 10
 rules:
   - RULE-SET,ffmmx-dirtect,DIRECT
   - RULE-SET,ffmmx-proxy,Proxy
