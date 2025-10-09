@@ -26,4 +26,4 @@ payload:
   - 'makepad.nl'
   - '*.jetbrains.com'
   - 'artifacts.elastic.co'
-  - '.baidu.com'
+  - '*.baidu.com'
