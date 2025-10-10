@@ -75,8 +75,23 @@ services:
     environment:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
     networks:
-      - rediscluster    
+      - rediscluster
 
+  redis-node6:
+    image: redis:7.2-alpine
+    container_name: redis-node6
+    restart: unless-stopped
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf", "--requirepass", "${REDIS_PASSWORD}", "--masterauth", "${REDIS_PASSWORD}"]
+    ports:
+      - "7005:6379"
+      - "17005:16379"
+    volumes:
+      - ./conf/node6/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-node6-data:/data
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    networks:
+      - rediscluster
 
 networks:
   rediscluster:
@@ -113,3 +128,9 @@ volumes:
       type: none
       o: bind
       device: ./redis-node5-data
+  redis-node6-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./redis-node6-data
