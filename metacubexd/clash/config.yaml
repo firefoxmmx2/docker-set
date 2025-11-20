@@ -44,12 +44,13 @@ proxy-groups:
       - nodefree
       - nodev2ray
       - yudou66
-      - anaer
+      # - anaer
   - name: auto
     type: url-test
     url: https://www.gstatic.com/generate_204
     timeout: 5000
-    interval: 300
+    interval: 60
+    include-all: true
     use:
       - ripaojiedian
       - v2rayshare
@@ -62,7 +63,7 @@ proxy-groups:
       - nodefree
       - nodev2ray
       - yudou66
-      - anaer
+      # - anaer
 proxy-providers:
   wenode:
     type: http
