@@ -6,6 +6,8 @@ allow-lan: true
 profile:
   store-selected: true
   store-fake-ip: true
+experimental:
+  enable-speedtest: true
 dns:
   enable: true
   listen: 0.0.0.0:1053
@@ -42,19 +44,19 @@ proxy-groups:
       - ermaozi
       - vxiaov 
       - getNode
-      - clashmeta
+      # - clashmeta
       - wenode
       - ndnode
       - nodefree
       - nodev2ray
       - yudou66
-      # - anaer
+      - anaer
   - name: auto
     type: url-test
     url: https://www.gstatic.com/generate_204
     timeout: 5000
-    interval: 60
-    include-all: true
+    interval: 300
+    enable-speedtest: true
     use:
       - ripaojiedian
       - v2rayshare
@@ -67,7 +69,7 @@ proxy-groups:
       - nodefree
       - nodev2ray
       - yudou66
-      # - anaer
+      - anaer
 proxy-providers:
   wenode:
     type: http
