@@ -57,6 +57,8 @@ proxy-groups:
     timeout: 5000
     interval: 300
     enable-speedtest: true
+    # 反向过滤：排除摩尔多瓦、俄罗斯节点，以及特定节点“英国(yudou6677.top 玉豆免费节点)”“美国(yudou6677.top 玉豆免费节点) 2”“美国(yudou6677.top 玉豆免费节点) 32”“美国(yudou6677.top 玉豆免费节点) 17”“_FR_法国_1”
+    filter: '^(?!.*(摩尔多瓦|俄罗斯|英国\(yudou6677\.top 玉豆免费节点\)|美国\(yudou6677\.top 玉豆免费节点\) 2|美国\(yudou6677\.top 玉豆免费节点\) 32|美国\(yudou6677\.top 玉豆免费节点\) 17|_FR_法国_1)).*$'
     use:
       - ripaojiedian
       - v2rayshare
