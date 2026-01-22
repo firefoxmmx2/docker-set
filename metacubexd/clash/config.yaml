@@ -86,7 +86,7 @@ proxy-providers:
   nodefree:
     type: http
     url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodefree.yaml
-    path: ./proxy-providers/ndnode.yaml
+    path: ./proxy-providers/nodefree.yaml
     interval: 7200
   nodev2ray:
     type: http
@@ -100,7 +100,7 @@ proxy-providers:
     interval: 7200
   ripaojiedian:
     type: http
-    url: https://cdn.jsdelivr.net/gh/ripaojiedian/freenode/clash
+    url: https://gh-proxy.org/https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash
     path: ./proxy-providers/ripaojiedian.yaml
     interval: 7200
     health-check:
@@ -112,22 +112,22 @@ proxy-providers:
       expected-status: 204
   v2rayshare:
     type: http
-    url: https://cdn.jsdelivr.net/gh/firefoxmmx2/v2rayshare_subcription/subscription/clash_sub.yaml
+    url: https://gh-proxy.org/https://raw.githubusercontent.com/firefoxmmx2/v2rayshare_subcription/main/subscription/clash_sub.yaml
     path: ./proxy-providers/v2rayshare.yaml
     interval: 7200
   ermaozi:
     type: http
-    url: https://cdn.jsdelivr.net/gh/ermaozi/get_subscribe/subscribe/clash.yml
+    url: https://gh-proxy.org/https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml
     path: ./proxy-providers/ermaozi.yaml
     interval: 7200
   vxiaov:
     type: http
-    url: https://cdn.jsdelivr.net/gh/vxiaov/free_proxies@main/clash/clash.provider.yaml
+    url: https://gh-proxy.org/https://raw.githubusercontent.com/vxiaov/free_proxies/main/clash/clash.provider.yaml
     path: ./proxy-providers/vxiaov.yaml
     interval: 7200
   getNode:
     type: http
-    url: https://cdn.jsdelivr.net/gh/a2470982985/getNode@main/clash.yaml
+    url: https://gh-proxy.org/https://raw.githubusercontent.com/a2470982985/getNode/main/clash.yaml
     path: ./proxy-providers/getNode.yaml
     interval: 7200
   clashmeta:
@@ -137,7 +137,7 @@ proxy-providers:
     interval: 7200
   anaer:
     type: http
-    url: https://cdn.jsdelivr.net/gh/anaer/Sub@main/clash.yaml
+    url: https://gh-proxy.org/https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml
     path: ./proxy-providers/anaer.yaml
     interval: 7200
 
@@ -145,91 +145,91 @@ rule-providers:
   reject:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
     path: ./ruleset/reject.yaml
     interval: 86400
 
   icloud:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt"
     path: ./ruleset/icloud.yaml
     interval: 86400
 
   apple:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
     path: ./ruleset/apple.yaml
     interval: 86400
 
   google:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"
     path: ./ruleset/google.yaml
     interval: 86400
 
   proxy:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
     path: ./ruleset/proxy.yaml
     interval: 86400
 
   direct:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
     path: ./ruleset/direct.yaml
     interval: 86400
 
   private:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"
     path: ./ruleset/private.yaml
     interval: 86400
 
   gfw:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
     path: ./ruleset/gfw.yaml
     interval: 86400
 
   tld-not-cn:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt"
     path: ./ruleset/tld-not-cn.yaml
     interval: 86400
 
   telegramcidr:
     type: http
     behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
     path: ./ruleset/telegramcidr.yaml
     interval: 86400
 
   cncidr:
     type: http
     behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
     path: ./ruleset/cncidr.yaml
     interval: 86400
 
   lancidr:
     type: http
     behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
     path: ./ruleset/lancidr.yaml
     interval: 86400
 
   applications:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
     path: ./ruleset/applications.yaml
     interval: 86400
 

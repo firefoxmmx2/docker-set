@@ -1,7 +1,7 @@
 services:
   metacubexd:
     container_name: metacubexd
-    image: ghcr.io/metacubex/metacubexd
+    image: ghcr.io/metacubex/metacubexd:latest
     restart: always
     ports:
       - '7899:80'
