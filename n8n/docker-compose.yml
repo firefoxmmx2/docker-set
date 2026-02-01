@@ -10,7 +10,7 @@ services:
       - "5678:5678"  # Web UI 端口
     volumes:
       - ./data:/home/node/.n8n  # 数据持久化到本地 data 目录
-      - ./Work/python/playwright-lawenforcement:/home/scan-folder # 需要扫描的目录
+      - ~/Work/python/playwright-lawenforcement:/home/scan-folder # 需要扫描的目录
     environment:
       # 基本配置
       - N8N_HOST=${N8N_HOST:-localhost}  # n8n 主机名 
