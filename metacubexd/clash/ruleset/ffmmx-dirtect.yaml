@@ -21,3 +21,6 @@ payload:
   - 'dm84.tv'
   - 'cloudfront.net'
   - 'cdn.jsdmirror.com'
+  - '*.archlinux.org'
+  - '*.jetbrains.com'
+  - '*.*.jetbrains.com'
