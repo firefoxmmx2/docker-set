@@ -1,21 +1,18 @@
+# compose.yaml — proxy-only by default; TUN is an advanced override
 services:
   metacubexd:
-    container_name: metacubexd
-    image: ghcr.io/metacubex/metacubexd
-    restart: always
+    image: ghcr.io/metacubex/metacubexd-server:latest
+    restart: unless-stopped
+    environment:
+      # CONTROL_TOKEN: 'change-me-control'
+      #CLASH_SECRET: 'change-me-clash'
+      CONTROL_PORT: '8080'
+      CLASH_API_PORT: '9090'
+      MIXED_PORT: '7890'
+      TZ: 'Asia/Shanghai'
     ports:
-      - '7899:80'
-
-  # optional
-  meta:
-    container_name: meta
-    image: docker.io/metacubex/mihomo:Alpha
-    restart: always
-    pid: host
-    ipc: host
-    network_mode: host
-    cap_add:
-      - ALL
+      - '8080:8080' # dashboard UI + /api/control agent API
+      - '9090:9090' # mihomo Clash API + WebSocket (UI endpoint target)
+      - '1080:7890' # mixed proxy port
     volumes:
-      - ./clash:/root/.config/mihomo
-      - /dev/net/tun:/dev/net/tun
+      - './clash:/data'
