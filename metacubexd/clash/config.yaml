@@ -231,17 +231,19 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 
-  ffmmx-proxy:
-    type: file
+  ffmmx-direct:
+    type: http
     behavior: domain
-    path: ./ruleset/ffmmx-proxy.yaml
-    interval: 8
+    url: "https://cdn.jsdmirror.com/gh/firefoxmmx2/docker-set@master/clash/ruleset/ffmmx-direct.txt"
+    path: ./ruleset/ffmmx-direct.yaml
+    interval: 1800
 
-  ffmmx-dirtect:
-    type: file
+  ffmmx-proxy:
+    type: http
     behavior: domain
-    path: ./ruleset/ffmmx-dirtect.yaml
-    interval: 8
+    url: "https://cdn.jsdmirror.com/gh/firefoxmmx2/docker-set@master/clash/ruleset/ffmmx-proxy.txt"
+    path: ./ruleset/ffmmx-proxy.yaml
+    interval: 1800
 
   aisino:
     type: file
@@ -249,7 +251,7 @@ rule-providers:
     path: ./ruleset/aisino.yaml
     interval: 9
 rules:
-  - RULE-SET,ffmmx-dirtect,DIRECT
+  - RULE-SET,ffmmx-direct,DIRECT
   - RULE-SET,ffmmx-proxy,Proxy
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
