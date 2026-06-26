@@ -1,0 +1,22 @@
+# direct rule for ffmmx
+*.firefox.com
+*.*.firefox.com
+cdn.jsdelivr.net
+*.hlwn14.com
+*.openrouter.ai
+openrouter.ai
+qwenlm.ai
+*.qwenlm.ai
+21st.dev
+element-plus.org
+repo.jing.rocks
+jp.mirrors.cicku.me
+*.element-plus.org
+playwright.download.prss.microsoft.com
+dm84.tv
+cloudfront.net
+cdn.jsdmirror.com
+*.archlinux.org
+*.jetbrains.com
+*.*.jetbrains.com
+vdownload.hembed.com
