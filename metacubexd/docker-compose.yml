@@ -11,8 +11,8 @@ services:
       MIXED_PORT: '7890'
       TZ: 'Asia/Shanghai'
     ports:
-      - '8080:8080' # dashboard UI + /api/control agent API
+      - '18080:8080' # dashboard UI + /api/control agent API
       - '9090:9090' # mihomo Clash API + WebSocket (UI endpoint target)
-      - '1080:7890' # mixed proxy port
+      - '7890:7890' # mixed proxy port
     volumes:
       - './clash:/data'
