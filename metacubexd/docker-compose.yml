@@ -4,18 +4,9 @@ services:
     image: ghcr.io/metacubex/metacubexd
     restart: always
     ports:
-      - '7899:80'
-
-  # optional
-  meta:
-    container_name: meta
-    image: docker.io/metacubex/mihomo:Alpha
-    restart: always
-    pid: host
-    ipc: host
-    network_mode: host
-    cap_add:
-      - ALL
+      - '18080:8080' # dashboard UI + /api/control agent API
+      - '9090:9090' # mihomo Clash API + WebSocket (UI endpoint target)
+      - '7890:7890' # mixed proxy port
     volumes:
       - ./clash:/root/.config/mihomo
       - /dev/net/tun:/dev/net/tun
