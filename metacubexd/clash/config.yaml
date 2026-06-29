@@ -254,14 +254,14 @@ rule-providers:
   ffmmx-direct:
     type: http
     behavior: domain
-    url: "https://cdn.jsdmirror.com/gh/firefoxmmx2/docker-set@master/clash/ruleset/ffmmx-direct.txt"
+    url: "https://cdn.jsdmirror.com/gh/firefoxmmx2/docker-set@main/metacubexd/clash/ruleset/ffmmx-direct.yaml"
     path: ./ruleset/ffmmx-direct.yaml
     interval: 1800
 
   ffmmx-proxy:
     type: http
     behavior: domain
-    url: "https://cdn.jsdmirror.com/gh/firefoxmmx2/docker-set@master/clash/ruleset/ffmmx-proxy.txt"
+    url: "https://cdn.jsdmirror.com/gh/firefoxmmx2/docker-set@main/metacubexd/clash/ruleset/ffmmx-proxy.yaml"
     path: ./ruleset/ffmmx-proxy.yaml
     interval: 1800
 
