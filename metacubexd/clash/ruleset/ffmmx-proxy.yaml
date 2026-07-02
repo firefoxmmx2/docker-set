@@ -1,5 +1,4 @@
 # proxy ruleset for ffmmx
-
 payload:
   - '*.docker.io'
   - 'v0.dev'
