@@ -4,11 +4,19 @@ mixed-port: 7890
 log-level: info
 mode: Rule
 allow-lan: true
+ipv6: true
 profile:
   store-selected: true
   store-fake-ip: true
 experimental:
   enable-speedtest: true
+tun:
+  enable: true
+  stack: gvisor
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
 dns:
   enable: true
   listen: 0.0.0.0:1053

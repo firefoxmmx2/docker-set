@@ -3,6 +3,15 @@ services:
   metacubexd:
     image: ghcr.io/metacubex/metacubexd-server:latest
     restart: unless-stopped
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - '18080:8080'
+      - '9090:9090'
+      - '7890:7890'
     environment:
       # CONTROL_TOKEN: 'change-me-control'
       #CLASH_SECRET: 'change-me-clash'
@@ -10,9 +19,5 @@ services:
       CLASH_API_PORT: '9090'
       MIXED_PORT: '7890'
       TZ: 'Asia/Shanghai'
-    ports:
-      - '18080:8080' # dashboard UI + /api/control agent API
-      - '9090:9090' # mihomo Clash API + WebSocket (UI endpoint target)
-      - '7890:7890' # mixed proxy port
     volumes:
       - './clash:/data'
