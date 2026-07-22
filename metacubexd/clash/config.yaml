@@ -7,7 +7,7 @@ allow-lan: false
 ipv6: true
 profile:
   store-selected: true
-  store-fake-ip: true
+  store-fake-ip: false
 experimental:
   enable-speedtest: true
 tun:
