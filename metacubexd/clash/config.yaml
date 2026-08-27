@@ -96,8 +96,8 @@ proxy-groups:
       - clashmeta
       - wenode
       - ndnode
-      # - nodefree
-      - nodev2ray
+      - nodefree
+      # - nodev2ray
       - yudou66
       - anaer
 proxy-providers:
