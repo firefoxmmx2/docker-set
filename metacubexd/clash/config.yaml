@@ -78,7 +78,7 @@ proxy-groups:
       - wenode
       - ndnode
       - nodefree
-      - nodev2ray
+      # - nodev2ray
       - yudou66
       - anaer
   - name: auto
@@ -96,7 +96,7 @@ proxy-groups:
       - clashmeta
       - wenode
       - ndnode
-      - nodefree
+      # - nodefree
       - nodev2ray
       - yudou66
       - anaer
@@ -116,11 +116,11 @@ proxy-providers:
     url: https://cdn.jsdmirror.com/gh/Barabama/FreeNodes@main/nodes/nodefree.yaml
     path: ./proxy-providers/nodefree.yaml
     interval: 7200
-  nodev2ray:
-    type: http
-    url: https://cdn.jsdmirror.com/gh/Barabama/FreeNodes@main/nodes/nodev2ray.yaml
-    path: ./proxy-providers/nodev2ray.yaml
-    interval: 7200
+  # nodev2ray:
+  #   type: http
+  #   url: https://cdn.jsdmirror.com/gh/Barabama/FreeNodes@main/nodes/nodev2ray.yaml
+  #   path: ./proxy-providers/nodev2ray.yaml
+  #   interval: 7200
   yudou66:
     type: http
     url: https://cdn.jsdmirror.com/gh/Barabama/FreeNodes@main/nodes/yudou66.yaml
