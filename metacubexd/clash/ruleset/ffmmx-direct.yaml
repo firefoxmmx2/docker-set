@@ -21,3 +21,4 @@ payload:
   - '*.jetbrains.com'
   - '*.*.jetbrains.com'
   - 'vdownload.hembed.com'
+  - 'cas-bridge.xethub.hf.co'
