@@ -23,3 +23,5 @@ payload:
   - "release-assets.githubusercontent.com"
   - "opencode.ai"
   - "*.opencode.ai"
+  - "awesome-dsh-plugin.com"
+  - "*.awesome-dsh-plugin.com"
