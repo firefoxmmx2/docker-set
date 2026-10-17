@@ -25,3 +25,5 @@ payload:
   - "*.opencode.ai"
   - "awesome-dsh-plugin.com"
   - "*.awesome-dsh-plugin.com"
+  - "boomio-cdn.com"
+  - "*.boomio-cdn.com"
