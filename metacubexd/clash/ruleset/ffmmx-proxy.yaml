@@ -21,8 +21,6 @@ payload:
   - "adoptium.net"
   - "mvnrepository.com"
   - "release-assets.githubusercontent.com"
-  - "opencode.ai"
-  - "*.opencode.ai"
   - "awesome-dsh-plugin.com"
   - "*.awesome-dsh-plugin.com"
   - "boomio-cdn.com"
