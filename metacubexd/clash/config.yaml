@@ -19,6 +19,7 @@ tun:
   auto-detect-interface: true
 dns:
   enable: true
+  ipv6: true
   listen: 0.0.0.0:1053
   default-nameserver:
     - 223.5.5.5
@@ -32,6 +33,7 @@ dns:
   fake-ip-filter:
     - '*.lan'
     - '*.local'
+    - '+.opencode.ai'
   fallback:
     - 223.5.5.5
     - 119.29.29.29
@@ -71,18 +73,17 @@ proxy-groups:
   - name: manual
     type: select
     use:
-      - ripaojiedian
       - v2rayshare
       - ermaozi
-      - vxiaov 
-      - getNode
       - clashmeta
       - wenode
-      - ndnode
       - nodefree
       # - nodev2ray
       - yudou66
       - anaer
+      - free18
+      - ovmvo
+      - snakem
   - name: auto
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -90,28 +91,22 @@ proxy-groups:
     interval: 300
     enable-speedtest: true
     use:
-      - ripaojiedian
       - v2rayshare
       - ermaozi
-      - vxiaov 
-      - getNode
       - clashmeta
       - wenode
-      - ndnode
       - nodefree
       # - nodev2ray
       - yudou66
       - anaer
+      - free18
+      - ovmvo
+      - snakem
 proxy-providers:
   wenode:
     type: http
     url: https://cdn.jsdmirror.cn/gh/Barabama/FreeNodes@main/nodes/wenode.yaml
     path: ./proxy-providers/wenode.yaml
-    interval: 7200
-  ndnode:
-    type: http
-    url: https://cdn.jsdmirror.cn/gh/Barabama/FreeNodes@main/nodes/ndnode.yaml
-    path: ./proxy-providers/ndnode.yaml
     interval: 7200
   nodefree:
     type: http
@@ -128,18 +123,6 @@ proxy-providers:
     url: https://cdn.jsdmirror.cn/gh/Barabama/FreeNodes@main/nodes/yudou66.yaml
     path: ./proxy-providers/yudou66.yaml
     interval: 7200
-  ripaojiedian:
-    type: http
-    url: https://cdn.jsdmirror.cn/gh/ripaojiedian/freenode/clash
-    path: ./proxy-providers/ripaojiedian.yaml
-    interval: 7200
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
   v2rayshare:
     type: http
     url: https://cdn.jsdmirror.cn/gh/firefoxmmx2/v2rayshare_subcription/subscription/clash_sub.yaml
@@ -149,16 +132,6 @@ proxy-providers:
     type: http
     url: https://cdn.jsdmirror.cn/gh/ermaozi/get_subscribe/subscribe/clash.yml
     path: ./proxy-providers/ermaozi.yaml
-    interval: 7200
-  vxiaov:
-    type: http
-    url: https://cdn.jsdmirror.cn/gh/vxiaov/free_proxies@main/clash/clash.provider.yaml
-    path: ./proxy-providers/vxiaov.yaml
-    interval: 7200
-  getNode:
-    type: http
-    url: https://cdn.jsdmirror.cn/gh/a2470982985/getNode@main/clash.yaml
-    path: ./proxy-providers/getNode.yaml
     interval: 7200
   clashmeta:
     type: http
@@ -170,6 +143,21 @@ proxy-providers:
     url: https://anaer.github.io/Sub/proxies.yaml
     path: ./proxy-providers/anaer.yaml
     interval: 7200
+  free18:
+    type: http
+    url: https://cdn.jsdmirror.cn/gh/free18/v2ray@main/c.yaml
+    path: ./proxy-providers/free18.yaml
+    interval: 10800
+  ovmvo:
+    type: http
+    url: https://cdn.jsdmirror.cn/gh/ovmvo/FreeSub@main/sub/permanent/mihomo.yaml
+    path: ./proxy-providers/ovmvo.yaml
+    interval: 7200
+  snakem:
+    type: http
+    url: https://cdn.jsdmirror.cn/gh/snakem982/proxypool@main/source/clash-meta-2.yaml
+    path: ./proxy-providers/snakem.yaml
+    interval: 3600
 
 rule-providers:
   reject:
