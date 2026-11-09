@@ -20,5 +20,4 @@ payload:
   - '*.archlinux.org'
   - '*.jetbrains.com'
   - '*.*.jetbrains.com'
-  - 'vdownload.hembed.com'
   - '+.opencode.ai'
